@@ -1,0 +1,29 @@
+# 1. Generate Fibonacci sequence up to n terms
+def fibonacci_sequence(n):
+    sequence = []
+    a, b = 0, 1
+    for _ in range(n):
+        sequence.append(a)
+        a, b = b, a + b
+    return sequence
+
+# 2. Get the n-th Fibonacci number (Iterative)
+def nth_fibonacci(n):
+    if n <= 1:
+        return n
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b
+
+# 3. Recursive version
+def fib_recursive(n):
+    if n <= 1:
+        return n
+    return fib_recursive(n - 1) + fib_recursive(n - 2)
+
+# --- Testing ---
+terms = 10
+print(f"Sequence up to {terms} terms: {fibonacci_sequence(terms)}")
+print(f"The {terms}th Fibonacci number: {nth_fibonacci(terms)}")
+print(f"The {terms}th Fibonacci number (recursive): {fib_recursive(terms)}")
